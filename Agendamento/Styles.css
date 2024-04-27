@@ -1,0 +1,122 @@
+
+/* Reset de margens e paddings */
+body, h1, h2, h3, p, ul, li, form {
+  margin: 0;
+  padding: 0;
+}
+
+/* Definição da fonte padrão */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo para o cabeçalho */
+header {
+  background-color: #1e6443;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Estilo para o menu de navegação */
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Estilo para o logotipo */
+.logo img {
+  max-width: 40%;
+  height: auto;
+  margin: 1rem;
+}
+
+/* Estilo para a seção de destaque (hero) */
+.hero {
+  border: 1px solid #cccccc; 
+  margin-bottom: 5px;
+  border-radius: 10px;
+  background-color:  #f4f4f4; 
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 20px 50px 30px 50px;
+  color: #141313;
+}
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* Estilo para o botão de chamada para ação */
+.cta-button {
+  display: inline-block;
+  background-color: #e47a00;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Estilo para a seção de agendamento */
+.appointment {
+  border: 1px solid #cccccc;
+  margin-bottom: 5px;
+  border-radius: 10px; 
+  padding: 40px;
+  background-color: #f4f4f4;
+}
+
+.appointment h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para o formulário */
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input,
+form select,
+form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #dbc9ac;
+  color: #fff;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #f16006;
+}
+
+/* Estilo para o rodapé */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+  color: #fff;
+}

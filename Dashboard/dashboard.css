@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vh;
+  overflow: hidden;
+}
+
+nav.menu-lateral {
+  width: 80px;
+  height: 100%;
+  background-color: #3b7355;
+  padding: 40px 0 40px 1%;
+  box-shadow: 3px 0 0 #d68749;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+nav.menu-lateral.expandir {
+  width: 300px;
+}
+
+nav.menu-lateral {
+  transition: 0.6s;
+}
+
+.btn-expandir {
+  width: 100%;
+  font-size: 28px;
+  padding-left: 10px;
+}
+
+.btn-expandir > i {
+  color: #ffff;
+  cursor: pointer;
+}
+
+ul {
+  height: 100%;
+  list-style: none;
+}
+
+ul li.item-menu:hover {
+  background-color: #d68749;
+}
+
+ul li.item-menu {
+  transition: 0.3s;
+}
+
+ul li.ativo {
+  background-color: #d68749;
+}
+
+ul li.item-menu a {
+  color: #ffff;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 20px 4%;
+  display: flex;
+  margin-bottom: 10px;
+  line-height: 40px;
+}
+
+ul li.item-menu a .txt-link {
+  margin-left: 70px;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+nav.menu-lateral.expandir .txt-link {
+  margin-left: 40px;
+  opacity: 1;
+}
+
+ul li.item-menu a .icon > i {
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+#home {
+  display: flex;
+  margin-left: 90px;
+  height: 100vh;
+  width: 100vh;
+}
+
+#perfil {
+  display: none;
+  margin-left: 90px;
+  height: 100vh;
+  width: 100vh;
+}
+
+/*Telas do dashboard*/
+
+/*HOME*/
+#home {
+  display: flex;
+  padding-top: 30px;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 45px;
+  margin-right: 0;
+  width: 1285px;
+  overflow: scroll;
+}
+
+/*PERFIL*/
+#perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 80px;
+  margin-right: 0;
+  width: 1000px;
+  overflow: scroll;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 15px;
+  min-width: 1200px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.info-paragraphs {
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-paragraphs p {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.reject-button {
+  background-color: #ff0000;
+  color: white;
+  margin-left: 10px;
+}
+
+.accept-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.rejected-card {
+  background-color: #ff0000;
+  transition: background-color 0.5s ease;
+}
+
+.accepted-card {
+  background-color: #4caf50;
+  transition: background-color 0.5s ease;
+}
