@@ -33,7 +33,7 @@ btnHome.addEventListener("click", () => {
 });
 
 function logout() {
-  window.location.href = "../Landing-page/index.html";
+  window.location.href = "../index.html";
 }
 
 //--------------------------------GET
