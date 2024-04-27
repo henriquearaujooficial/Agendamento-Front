@@ -24,7 +24,7 @@ function handleSubmit(event) {
 
   cadastrar(name, email, phone, dateAsString, time, serviceAsString);
 
-  window.location.href = "../Landing-page/landing-page.html";
+  window.location.href = "../Landing-page/index.html";
 }
 // Adicionar um ouvinte de evento para o envio do formulário
 const form = document.querySelector("form");
