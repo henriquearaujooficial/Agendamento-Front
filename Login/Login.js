@@ -13,7 +13,7 @@ function logar() {
   const emailDigitado = email.value;
   const senhaDigitada = senha.value;
 
-  if (emailDigitado === "HenriqueFerreira" && senhaDigitada === "teste1232") {
+  if (emailDigitado === "" && senhaDigitada === "") {
     window.location.href = "../Dashboard/dashboard.html";
   } else {
     alert("Usuario ou senha estão incorreto, tente novamente!");
