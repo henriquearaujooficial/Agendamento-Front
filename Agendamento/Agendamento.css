@@ -34,7 +34,7 @@ nav a {
 
 /* Estilo para o logotipo */
 .logo img {
-  max-width: 40%;
+  max-width: 10%;
   height: auto;
   margin: 1rem;
 }
@@ -110,8 +110,14 @@ form button {
   cursor: pointer;
 }
 
+form button {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
 form button:hover {
-  background-color: #f16006;
+  background-color: #4554b3;
+  transform: scale(1.1);
+    
 }
 
 /* Estilo para o rodapé */
