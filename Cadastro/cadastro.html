@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Ficha Cadastral - Gabinete SEPD</title>
+  <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Ficha Cadastral - Gabinete SEPD</h2>
+    <form>
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" id="nome" required>
+      </div>
+      <div class="form-group">
+        <label for="cpf">CPF:</label>
+        <input type="text" class="form-control" id="cpf" required>
+      </div>
+      <div class="form-group">
+        <label for="endereco">Endereço:</label>
+        <input type="text" class="form-control" id="endereco" required>
+      </div>
+      <div class="form-group">
+        <label for="cidade">Cidade:</label>
+        <input type="text" class="form-control" id="cidade" required>
+      </div>
+      <div class="form-group">
+        <label for="estado">Estado:</label>
+        <input type="text" class="form-control" id="estado" required>
+      </div>
+      <div class="form-group">
+        <label for="deficiencias">Deficiências:</label>
+        <select multiple class="form-control" id="deficiencias" required>
+          <option>Autista</option>
+          <option>Surdo</option>
+          <option>Cego</option>
+          <option>Paralítica</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="voto">Você votou em quem:</label>
+        <input type="text" class="form-control" id="voto" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+<script src="./cadastro.js"></script>
+</html>
