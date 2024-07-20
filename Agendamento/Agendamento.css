@@ -12,7 +12,7 @@ body {
 
 /* Estilo para o cabeçalho */
 header {
-  background-color: #1e6443;
+  background-color: #0F1E84;
   color: #ffffff;
   padding: 20px;
 }
@@ -65,7 +65,7 @@ nav a {
 /* Estilo para o botão de chamada para ação */
 .cta-button {
   display: inline-block;
-  background-color: #e47a00;
+  background-color: #F8C34A;
   color: #ffffff;
   padding: 10px 20px;
   border-radius: 5px;

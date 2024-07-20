@@ -16,9 +16,9 @@ body {
 nav.menu-lateral {
   width: 80px;
   height: 100%;
-  background-color: #3b7355;
+  background-color: #0F1E84;
   padding: 40px 0 40px 1%;
-  box-shadow: 3px 0 0 #d68749;
+  box-shadow: 3px 0 0 #F8C34A;
   position: fixed;
   top: 0;
   left: 0;
@@ -50,7 +50,7 @@ ul {
 }
 
 ul li.item-menu:hover {
-  background-color: #d68749;
+  background-color: #F8C34A;
 }
 
 ul li.item-menu {
@@ -58,7 +58,7 @@ ul li.item-menu {
 }
 
 ul li.ativo {
-  background-color: #d68749;
+  background-color: #F8C34A;
 }
 
 ul li.item-menu a {
@@ -170,7 +170,7 @@ button {
 }
 
 .accept-button {
-  background-color: #4caf50;
+  background-color: #0F1E84;
   color: white;
 }
 
@@ -180,6 +180,6 @@ button {
 }
 
 .accepted-card {
-  background-color: #4caf50;
+  background-color: #0F1E84;
   transition: background-color 0.5s ease;
 }
