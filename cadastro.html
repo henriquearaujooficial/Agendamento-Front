@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <title>Ficha Cadastral - Gabinete SEPD</title>
   <link rel="stylesheet" href="cadastro.css">
+  <title>Ficha Cadastral - Gabinete SEPD</title>
 </head>
 <body>
   <div class="container mt-5">
     <h2 class="text-center mb-4">Ficha Cadastral - Gabinete SEPD</h2>
-    <form>
+    <form id="cadastroForm">
       <div class="form-group">
         <label for="nome">Nome:</label>
         <input type="text" class="form-control" id="nome" required>
@@ -45,12 +45,13 @@
         <input type="text" class="form-control" id="voto" required>
       </div>
       <button type="submit" class="btn btn-primary">Enviar</button>
+      <button type="button" class="btn btn-secondary" id="printButton">Imprimir</button>
     </form>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="cadastro.js"></script>
 </body>
-<script src="./cadastro.js"></script>
 </html>

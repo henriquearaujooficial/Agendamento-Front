@@ -1,0 +1,88 @@
+/* Estilos gerais para a página de ficha cadastral */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #0F1E84;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #0F1E84;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: #0F1E84;
+  border-color: #0F1E84;
+}
+
+.btn-primary:hover {
+  background-color: #4554b3;
+  border-color: #4554b3;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+#deficiencias {
+  height: auto;
+}
+
+.form-control:focus {
+  border-color: #4554b3;
+  box-shadow: 0 0 0 0.2rem rgba(69, 84, 179, 0.25);
+}
+
+/* Estilos para impressão */
+@media print {
+  @page {
+    size: A4;
+    margin: 20mm;
+  }
+
+  body {
+    background-color: #fff;
+  }
+
+  .container {
+    box-shadow: none;
+    margin: 0;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    display: none;
+  }
+
+  .form-group {
+    page-break-inside: avoid;
+  }
+
+  form {
+    margin: 0;
+  }
+}
