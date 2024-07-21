@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="cadastroiolando.css">
+  <title>Ficha Cadastral - Gabinete Iolando</title>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Ficha Cadastral - Gabinete Iolando</h2>
+    <form id="cadastroForm">
+      <div class="form-group">
+        <label for="cpf">CPF:</label>
+        <input type="text" class="form-control" id="cpf" required>
+      </div>
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" id="nome" required>
+      </div>
+      <div class="form-group">
+        <label for="telefoneResidencial">Tel Res:</label>
+        <input type="text" class="form-control" id="telefoneResidencial">
+      </div>
+      <div class="form-group">
+        <label for="telefoneCelular">Tel Cel:</label>
+        <input type="text" class="form-control" id="telefoneCelular">
+      </div>
+      <div class="form-group">
+        <label for="cep">CEP:</label>
+        <input type="text" class="form-control" id="cep" required>
+      </div>
+      <div class="form-group">
+        <label for="endereco">Endereço:</label>
+        <input type="text" class="form-control" id="endereco" required>
+      </div>
+      <div class="form-group">
+        <label for="bairro">Bairro:</label>
+        <input type="text" class="form-control" id="bairro" required>
+      </div>
+      <div class="form-group">
+        <label for="cidade">Cidade:</label>
+        <select class="form-control" id="cidade" required>
+          <option value="">Selecione a Cidade</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="estado">Estado:</label>
+        <input type="text" class="form-control" id="estado" value="DF" readonly>
+      </div>
+      <div class="form-group">
+        <label for="servicoOferecido">Qual o Tipo de Serviço Oferecido:</label>
+        <input type="text" class="form-control" id="servicoOferecido">
+      </div>
+      <div class="form-group">
+        <label>Foi Atendido:</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="foiAtendido" id="foiAtendidoSim" value="Sim" required>
+          <label class="form-check-label" for="foiAtendidoSim">Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="foiAtendido" id="foiAtendidoNao" value="Não" required>
+          <label class="form-check-label" for="foiAtendidoNao">Não</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Quer Saber de Política:</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="querSaberPolitica" id="querSaberPoliticaSim" value="Sim" required>
+          <label class="form-check-label" for="querSaberPoliticaSim">Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="querSaberPolitica" id="querSaberPoliticaNao" value="Não" required>
+          <label class="form-check-label" for="querSaberPoliticaNao">Não</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Líder Comunitário:</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="liderComunitario" id="liderComunitarioSim" value="Sim" required>
+          <label class="form-check-label" for="liderComunitarioSim">Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="liderComunitario" id="liderComunitarioNao" value="Não" required>
+          <label class="form-check-label" for="liderComunitarioNao">Não</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+      <button type="button" class="btn btn-secondary" id="printButton">Imprimir</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="cadastroiolando.js"></script>
+</body>
+</html>
