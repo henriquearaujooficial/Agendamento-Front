@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,22 +20,21 @@
         <input type="text" class="form-control" id="cpf" required>
       </div>
       <div class="form-group">
-        <label for="cpf">E-mail:</label>
-        <input type="text" class="form-control" id="cpf" required>
+        <label for="email">E-mail:</label>
+        <input type="email" class="form-control" id="email" required>
       </div>
       <div class="form-group">
-        <label for="cpf">Tel. Cel:</label>
-        <input type="text" class="form-control" id="cpf" required>
+        <label for="telCel">Tel. Cel:</label>
+        <input type="text" class="form-control" id="telCel" required>
       </div>
       <div class="form-group">
-        <label for="cpf">Tel. Resd.:</label>
-        <input type="text" class="form-control" id="cpf" required>
+        <label for="telRes">Tel. Resd.:</label>
+        <input type="text" class="form-control" id="telRes" required>
       </div>
       <div class="form-group">
-        <label for="cpf">Tel. Cuidador:</label>
-        <input type="text" class="form-control" id="cpf" required>
+        <label for="telCuidador">Tel. Cuidador:</label>
+        <input type="text" class="form-control" id="telCuidador" required>
       </div>
-
       <div class="form-group">
         <label for="endereco">Endereço:</label>
         <input type="text" class="form-control" id="endereco" required>
@@ -49,13 +48,27 @@
         <input type="text" class="form-control" id="estado" required>
       </div>
       <div class="form-group">
-        <label for="deficiencias">Deficiências:</label>
-        <select multiple class="form-control" id="deficiencias" required>
-          <option>Autista</option>
-          <option>Surdo</option>
-          <option>Cego</option>
-          <option>Paralítica</option>
-        </select>
+        <label>Deficiências:</label><br>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Autista" id="deficienciaAutista">
+          <label class="form-check-label" for="deficienciaAutista">Autista</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Surdo" id="deficienciaSurdo">
+          <label class="form-check-label" for="deficienciaSurdo">Surdo</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Cego" id="deficienciaCego">
+          <label class="form-check-label" for="deficienciaCego">Cego</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Paralítica" id="deficienciaParalitica">
+          <label class="form-check-label" for="deficienciaParalitica">Paralítica</label>
+        </div>
+        <div class="form-group mt-3">
+          <label for="deficienciasSelecionadas">Deficiências Selecionadas:</label>
+          <input type="text" class="form-control" id="deficienciasSelecionadas" readonly>
+        </div>
       </div>
       <div class="form-group">
         <label for="servicoOferecido">Você já teve algum serviço pela SEPD?</label>
