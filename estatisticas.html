@@ -18,10 +18,38 @@
         background-color: #0F1E84;
         color: #fff;
     }
-    .chart-container {
-        width: 80%;
-        margin: 0 auto;
-        padding: 20px 0;
+
+    #carouselExample {
+      overflow: hidden;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 28px;
+      text-decoration: none;
+    }
+
+    .footer-content img {
+      max-height: 50px;
+    }
+
+    .footer-center {
+      text-align: center;
+      flex: 1;
     }
   </style>
 </head>
@@ -44,7 +72,6 @@
           </div>
         </nav>
     </header>
-
     <main>
         <section class="py-5">
             <div class="container">
@@ -68,8 +95,21 @@
     </main>
 
     <footer>
-        <div class="text-center py-3">
-        Todos os direitos reservados &copy; Iolando
+        <div class="footer-content">
+            <img src="/Login/assents/iolandoinclusao.png" alt="Left Image">
+            <div class="footer-center">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/iolandooficial" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/iolandooficial" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/iolandooficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=556196012101&text=Deputado%20iolando" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.youtube.com/channel/UCcemlg6iZRkm1WkZ_zgguhQ" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="text-center py-3">
+                    Todos os direitos reservados &copy; Iolando
+                </div>
+            </div>
+            <img src="/Login/assents/Iolandorodape.png" alt="Right Image">
         </div>
     </footer>
 
@@ -83,10 +123,10 @@
             new Chart(ctxBar, {
                 type: 'bar',
                 data: {
-                    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
                     datasets: [{
                         label: 'Serviços Concluídos',
-                        data: [12, 19, 3, 5, 2, 3],
+                        data: [12, 19, 3, 5, 2, 3, 8, 7, 6, 10, 15, 18],
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
                         borderColor: 'rgba(75, 192, 192, 1)',
                         borderWidth: 1
@@ -104,10 +144,10 @@
             new Chart(ctxLine, {
                 type: 'line',
                 data: {
-                    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
                     datasets: [{
                         label: 'Atendimentos Mensais',
-                        data: [15, 29, 5, 5, 20, 3],
+                        data: [15, 29, 5, 5, 20, 3, 8, 10, 14, 16, 20, 25],
                         fill: false,
                         borderColor: 'rgba(75, 192, 192, 1)',
                         tension: 0.1
@@ -125,7 +165,7 @@
             new Chart(ctxPie, {
                 type: 'pie',
                 data: {
-                    labels: ['Serviço de Campo', 'Quantos serviços', 'cidade'],
+                    labels: ['Serviço de Campo', 'Quantos serviços', 'Cidade'],
                     datasets: [{
                         label: 'Tipos de Serviços',
                         data: [10, 20, 30],
@@ -147,7 +187,7 @@
             new Chart(ctxDoughnut, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Serviço de Campo', 'Quantos serviços', 'cidade'],
+                    labels: ['Serviço de Campo', 'Quantos serviços', 'Cidade'],
                     datasets: [{
                         label: 'Distribuição de Serviços',
                         data: [12, 15, 8],
