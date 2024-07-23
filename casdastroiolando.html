@@ -1,68 +1,87 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="cadastroiolando.css">
-  <title>Ficha Cadastral</title>
+  <link rel="stylesheet" href="cadastro.css">
+  <title>Gabinete Iolando</title>
+  <style>
+    @media print {
+      body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 10mm;
+      }
+      .container {
+        width: 100%;
+        padding: 0;
+      }
+      button {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container mt-5">
-    <h5 class="text-center mb-4">CÂMARA LEGISLATIVA DO DISTRITO FEDERAL</h5>
+    <h2 class="text-center mb-4">Ficha Cadastral - GABINETE IOLANDO</h2>
     <form id="cadastroForm">
-      <div class="form-group">
-        <label for="cpf">CPF:</label>
-        <input type="text" class="form-control" id="cpf" required>
-      </div>
       <div class="form-group">
         <label for="nome">Nome:</label>
         <input type="text" class="form-control" id="nome" required>
       </div>
       <div class="form-group">
-        <label for="email">E-Mail:</label>
+        <label for="cpf">CPF:</label>
+        <input type="text" class="form-control" id="cpf" required>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail:</label>
         <input type="email" class="form-control" id="email" required>
       </div>
       <div class="form-group">
-        <label for="telefoneResidencial">Tel Res:</label>
-        <input type="text" class="form-control" id="telefoneResidencial">
+        <label for="telCel">Tel. Cel:</label>
+        <input type="text" class="form-control" id="telCel" required>
       </div>
       <div class="form-group">
-        <label for="telefoneCelular">Tel Cel:</label>
-        <input type="text" class="form-control" id="telefoneCelular">
+        <label for="telRes">Tel. Resd.:</label>
+        <input type="text" class="form-control" id="telRes" required>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-6">
+          <label for="cep">CEP:</label>
+          <input type="text" class="form-control" id="cep" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-8">
+          <label for="endereco">Endereço:</label>
+          <input type="text" class="form-control" id="endereco" required>
+        </div>
+        <div class="col-md-4">
+          <label for="numero">Número:</label>
+          <input type="text" class="form-control" id="numero" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-6">
+          <label for="bairro">Bairro:</label>
+          <input type="text" class="form-control" id="bairro" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-9">
+          <label for="cidade">Cidade:</label>
+          <input type="text" class="form-control" id="cidade" required>
+        </div>
+        <div class="col-md-3">
+          <label for="estado">Estado:</label>
+          <input type="text" class="form-control" id="estado" required>
+        </div>
       </div>
       <div class="form-group">
-        <label for="cep">CEP:</label>
-        <input type="text" class="form-control" id="cep" required>
-      </div>
-      <div class="form-group">
-        <label for="endereco">Endereço:</label>
-        <input type="text" class="form-control" id="endereco" required>
-      </div>
-      <div class="form-group">
-        <label for="bairro">Bairro:</label>
-        <input type="text" class="form-control" id="bairro" required>
-      </div>
-      <div class="form-group">
-        <label for="cidade">Cidade:</label>
-        <select class="form-control" id="cidade" required>
-          <option value="">Selecione a Cidade</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="estado">Estado:</label>
-        <input type="text" class="form-control" id="estado" value="DF" readonly>
-      </div>
-      <div class="form-group">
-        <label for="data">Escolha a Data:</label>
-        <input type="date" class="form-control" id="data" required>
-      </div>
-      <div class="form-group">
-        <label for="horario">Escolha o Horário:</label>
-        <input type="time" class="form-control" id="horario" required>
-      </div>
-      <div class="form-group">
-        <label for="servicoOferecido">Qual o Tipo de Serviço Oferecido:</label>
+        <label for="servicoOferecido">Qual serviço foi solicitado ao GAB?</label>
         <input type="text" class="form-control" id="servicoOferecido">
       </div>
       <div class="form-group">
@@ -98,6 +117,10 @@
           <label class="form-check-label" for="liderComunitarioNao">Não</label>
         </div>
       </div>
+      <div class="form-group">
+        <label for="voto">Você votou em quem:</label>
+        <input type="text" class="form-control" id="voto" required>
+      </div>
       <button type="submit" class="btn btn-primary">Enviar</button>
       <button type="button" class="btn btn-secondary" id="printButton">Imprimir</button>
     </form>
@@ -106,6 +129,51 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="cadastroiolando.js"></script>
+  <script src="cadastro.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkboxes = document.querySelectorAll('.form-check-input.deficiencia');
+      const selectedField = document.getElementById('deficienciasSelecionadas');
+
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+          const selected = Array.from(checkboxes)
+            .filter(i => i.checked)
+            .map(i => i.value)
+            .join(', ');
+          selectedField.value = selected;
+        });
+      });
+
+      const cepInput = document.getElementById('cep');
+      cepInput.addEventListener('blur', function() {
+        const cep = cepInput.value.replace(/\D/g, '');
+        if (cep) {
+          const validacep = /^[0-9]{8}$/;
+          if (validacep.test(cep)) {
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+              .then(response => response.json())
+              .then(data => {
+                if (!('erro' in data)) {
+                  document.getElementById('endereco').value = data.logradouro;
+                  document.getElementById('bairro').value = data.bairro;
+                  document.getElementById('cidade').value = data.localidade;
+                  document.getElementById('estado').value = data.uf;
+                } else {
+                  alert('CEP não encontrado.');
+                }
+              })
+              .catch(error => console.error('Erro ao buscar o CEP:', error));
+          } else {
+            alert('Formato de CEP inválido.');
+          }
+        }
+      });
+
+      document.getElementById('printButton').addEventListener('click', function() {
+        window.print();
+      });
+    });
+  </script>
 </body>
 </html>

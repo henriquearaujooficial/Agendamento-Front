@@ -1,15 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="PT-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="cadastro.css">
-  <title>Ficha Cadastral - Gabinete SEPD</title>
+  <title>Gabinete SEPD</title>
+  <style>
+    @media print {
+      body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 10mm;
+      }
+      .container {
+        width: 100%;
+        padding: 0;
+      }
+      button {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container mt-5">
-    <h2 class="text-center mb-4">Ficha Cadastral - Gabinete SEPD</h2>
+    <h2 class="text-center mb-4">Ficha Cadastral - GABINETE SEPD</h2>
     <form id="cadastroForm">
       <div class="form-group">
         <label for="nome">Nome:</label>
@@ -35,35 +52,59 @@
         <label for="telCuidador">Tel. Cuidador:</label>
         <input type="text" class="form-control" id="telCuidador" required>
       </div>
-      <div class="form-group">
-        <label for="endereco">Endereço:</label>
-        <input type="text" class="form-control" id="endereco" required>
+      <div class="form-group row">
+        <div class="col-md-6">
+          <label for="cep">CEP:</label>
+          <input type="text" class="form-control" id="cep" required>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="cidade">Cidade:</label>
-        <input type="text" class="form-control" id="cidade" required>
+      <div class="form-group row">
+        <div class="col-md-8">
+          <label for="endereco">Endereço:</label>
+          <input type="text" class="form-control" id="endereco" required>
+        </div>
+        <div class="col-md-4">
+          <label for="numero">Número:</label>
+          <input type="text" class="form-control" id="numero" required>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="estado">Estado:</label>
-        <input type="text" class="form-control" id="estado" required>
+      <div class="form-group row">
+        <div class="col-md-6">
+          <label for="bairro">Bairro:</label>
+          <input type="text" class="form-control" id="bairro" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-9">
+          <label for="cidade">Cidade:</label>
+          <input type="text" class="form-control" id="cidade" required>
+        </div>
+        <div class="col-md-3">
+          <label for="estado">Estado:</label>
+          <input type="text" class="form-control" id="estado" required>
+        </div>
       </div>
       <div class="form-group">
         <label>Deficiências:</label><br>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Autista" id="deficienciaAutista">
-          <label class="form-check-label" for="deficienciaAutista">Autista</label>
+          <input class="form-check-input deficiencia" type="checkbox" value="Deficiência física" id="deficienciaFisica">
+          <label class="form-check-label" for="deficienciaFisica">Deficiência física</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Surdo" id="deficienciaSurdo">
-          <label class="form-check-label" for="deficienciaSurdo">Surdo</label>
+          <input class="form-check-input deficiencia" type="checkbox" value="Deficiência visual" id="deficienciaVisual">
+          <label class="form-check-label" for="deficienciaVisual">Deficiência visual</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Cego" id="deficienciaCego">
-          <label class="form-check-label" for="deficienciaCego">Cego</label>
+          <input class="form-check-input deficiencia" type="checkbox" value="Deficiência auditiva" id="deficienciaAuditiva">
+          <label class="form-check-label" for="deficienciaAuditiva">Deficiência auditiva</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Paralítica" id="deficienciaParalitica">
-          <label class="form-check-label" for="deficienciaParalitica">Paralítica</label>
+          <input class="form-check-input deficiencia" type="checkbox" value="Deficiência intelectual" id="deficienciaIntelectual">
+          <label class="form-check-label" for="deficienciaIntelectual">Deficiência intelectual</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input deficiencia" type="checkbox" value="Autismo" id="autismo">
+          <label class="form-check-label" for="autismo">Autismo</label>
         </div>
         <div class="form-group mt-3">
           <label for="deficienciasSelecionadas">Deficiências Selecionadas:</label>
@@ -71,7 +112,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="servicoOferecido">Você já teve algum serviço pela SEPD?</label>
+        <label for="servicoOferecido">Você já teve algum serviço fornecido pela SEPD?</label>
         <input type="text" class="form-control" id="servicoOferecido">
       </div>
       <div class="form-group">
@@ -120,5 +161,50 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="cadastro.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkboxes = document.querySelectorAll('.form-check-input.deficiencia');
+      const selectedField = document.getElementById('deficienciasSelecionadas');
+
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+          const selected = Array.from(checkboxes)
+            .filter(i => i.checked)
+            .map(i => i.value)
+            .join(', ');
+          selectedField.value = selected;
+        });
+      });
+
+      const cepInput = document.getElementById('cep');
+      cepInput.addEventListener('blur', function() {
+        const cep = cepInput.value.replace(/\D/g, '');
+        if (cep) {
+          const validacep = /^[0-9]{8}$/;
+          if (validacep.test(cep)) {
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+              .then(response => response.json())
+              .then(data => {
+                if (!('erro' in data)) {
+                  document.getElementById('endereco').value = data.logradouro;
+                  document.getElementById('bairro').value = data.bairro;
+                  document.getElementById('cidade').value = data.localidade;
+                  document.getElementById('estado').value = data.uf;
+                } else {
+                  alert('CEP não encontrado.');
+                }
+              })
+              .catch(error => console.error('Erro ao buscar o CEP:', error));
+          } else {
+            alert('Formato de CEP inválido.');
+          }
+        }
+      });
+
+      document.getElementById('printButton').addEventListener('click', function() {
+        window.print();
+      });
+    });
+  </script>
 </body>
 </html>
