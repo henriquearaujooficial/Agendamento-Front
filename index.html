@@ -23,6 +23,35 @@
     #carouselExample {
       overflow: hidden;
     }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 28px;
+      text-decoration: none;
+    }
+
+    .footer-content img {
+      max-height: 50px;
+    }
+
+    .footer-center {
+      text-align: center;
+      flex: 1;
+    }
   </style>
 </head>
 <body>
@@ -34,9 +63,6 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="../Agendamento/Agendamento.html">Agendamento</a>
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="../Login/Login.html">Login</a>
               </li>
@@ -108,7 +134,7 @@
                         <img src="/Login/assents/imagesSEPD.png" class="img-fluid mt-4" alt="imagem3.png" >
                     </div>
                 </div>
-                </abbr>
+                </a>
             </div>
             <div class="col-md-4 mb-4">
                 <a href="https://iolando.com.br/" target="_blank">
@@ -177,8 +203,21 @@
     </main>
 
     <footer>
-        <div class="text-center py-3">
-        Todos os direitos reservados &copy; Iolando
+        <div class="footer-content">
+            <img src="/Login/assents/iolandoinclusao.png" alt="Left Image">
+            <div class="footer-center">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/iolandooficial" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/iolandooficial" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/iolandooficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=556196012101&text=Deputado%20iolando" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.youtube.com/channel/UCcemlg6iZRkm1WkZ_zgguhQ" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="text-center py-3">
+                    Todos os direitos reservados &copy; Iolando
+                </div>
+            </div>
+            <img src="/Login/assents/Iolandorodape.png" alt="Right Image">
         </div>
     </footer>
 
