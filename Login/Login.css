@@ -21,14 +21,14 @@ body {
 }
 
 img {
-    width: 85%;
-    height: 130px;
+    width: 75%;
+    height: 100px;
     object-fit: contain;
     background-position: center;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 0px;
-    margin-left: 35px;
-    margin-right: 35px;
+    margin-left: 50px;
+    margin-right: 10px;
 }
 
 .container {
@@ -44,7 +44,7 @@ img {
 
     padding: 20px;
     margin: 0 auto;
-    width: 420px;
+    width: 320px;
     height: 352px;
     background-color: #dedede6d;
     border-radius: 4%;
