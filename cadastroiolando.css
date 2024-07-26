@@ -1,11 +1,11 @@
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f8f9fa;
+  background-color: #f8f9fab6;
 }
 
 header {
-  background-color: #0F1E84;
-  color: white;
+  background-color: #f8f9fab6;
+  color: #f8f9fab6;
   position: relative;
 }
 
@@ -17,7 +17,7 @@ header {
 .container {
   background-color: #0F1E84;
   padding: 0px;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -29,14 +29,14 @@ form {
 }
 
 .first-box {
-  background-color: #0F1E84;
-  color: white;
+  background-color: #f8f9fab6;
+  color: black;
   padding: 20px;
   border-radius: 8px;
 }
 
 .first-box label {
-  color: white;
+  color: black;
 }
 
 .custom-header-text {
@@ -67,11 +67,11 @@ label {
 }
 
 input[type="text"], input[type="email"], input[type="password"] {
-  background-color: #f1f1f1;
+  background-color: #f8f9fab6;
 }
 
 input::placeholder {
-  color: #a0a0a0;
+  color: #f8f9fab6;
 }
 
 .deficiencia {
