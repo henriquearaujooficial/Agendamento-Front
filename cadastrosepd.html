@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="cadastrosepd.css">
-  <link rel="icon" href="/Login/assents/Iolandofavicon.png" type="imagemfavicon">
-  <title>Gabinete SEPD</title>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="cadastroiolando.css">
+    <link rel="icon" href="/Login/assents/Iolandofavicon.png" type="imagem/favicon">
+    <title>Gabinete SEPD</title>
+</head>
+<style>
     @media print {
       body {
         width: 210mm;
@@ -23,189 +25,196 @@
         display: none;
       }
     }
-  </style>
-</head>
+</style>
 <body>
-  <div class="container mt-5">
-    <h2 class="text-center mb-4">Ficha Cadastral - GABINETE SEPD</h2>
-    <form id="cadastroForm">
-      <div class="form-group">
-        <label for="nome">Nome:</label>
-        <input type="text" class="form-control" id="nome" required>
-      </div>
-      <div class="form-group">
-        <label for="cpf">CPF:</label>
-        <input type="text" class="form-control" id="cpf" required>
-      </div>
-      <div class="form-group">
-        <label for="email">E-mail:</label>
-        <input type="email" class="form-control" id="email" required>
-      </div>
-      <div class="form-group">
-        <label for="telCel">Tel. Cel:</label>
-        <input type="text" class="form-control" id="telCel" required>
-      </div>
-      <div class="form-group">
-        <label for="telRes">Tel. Resd.:</label>
-        <input type="text" class="form-control" id="telRes" required>
-      </div>
-      <div class="form-group">
-        <label for="telCuidador">Tel. Cuidador:</label>
-        <input type="text" class="form-control" id="telCuidador" required>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-6">
-          <label for="cep">CEP:</label>
-          <input type="text" class="form-control" id="cep" required>
+    <div class="background-header"></div>
+    <header class="bg-white text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center header-container">
+            <div>
+                <img src="/Login/assents/Logositeiolando.png" alt="Logo" style="height: 50px;">
+            </div>
+            <h1 class="h4 mb-0">FICHA CADASTRAL - GABINETE SEPD</h1>
+            <div>
+                <img src="/Login/assents/SEPD.png" alt="User" style="height: 50px;">
+            </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-8">
-          <label for="endereco">Endereço:</label>
-          <input type="text" class="form-control" id="endereco" required>
-        </div>
-        <div class="col-md-4">
-          <label for="numero">Número:</label>
-          <input type="text" class="form-control" id="numero" required>
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-6">
-          <label for="bairro">Bairro:</label>
-          <input type="text" class="form-control" id="bairro" required>
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-9">
-          <label for="cidade">Cidade:</label>
-          <input type="text" class="form-control" id="cidade" required>
-        </div>
-        <div class="col-md-3">
-          <label for="estado">Estado:</label>
-          <input type="text" class="form-control" id="estado" required>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Deficiências:</label><br>
-        <div class="form-check">
-          <input class="form-check-input deficiencia" type="checkbox" value="Deficiência física" id="deficienciaFisica">
-          <label class="form-check-label" for="deficienciaFisica">Deficiência física</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input deficiencia" type="checkbox" value="Deficiência visual" id="deficienciaVisual">
-          <label class="form-check-label" for="deficienciaVisual">Deficiência visual</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input deficiencia" type="checkbox" value="Deficiência auditiva" id="deficienciaAuditiva">
-          <label class="form-check-label" for="deficienciaAuditiva">Deficiência auditiva</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input deficiencia" type="checkbox" value="Deficiência intelectual" id="deficienciaIntelectual">
-          <label class="form-check-label" for="deficienciaIntelectual">Deficiência intelectual</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input deficiencia" type="checkbox" value="Autismo" id="autismo">
-          <label class="form-check-label" for="autismo">Autismo</label>
-        </div>
-        <div class="form-group mt-3">
-          <label for="deficienciasSelecionadas">Deficiências Selecionadas:</label>
-          <input type="text" class="form-control" id="deficienciasSelecionadas" readonly>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="servicoOferecido">Você já teve algum serviço fornecido pela SEPD?</label>
-        <input type="text" class="form-control" id="servicoOferecido">
-      </div>
-      <div class="form-group">
-        <label>Foi Atendido:</label><br>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="foiAtendido" id="foiAtendidoSim" value="Sim" required>
-          <label class="form-check-label" for="foiAtendidoSim">Sim</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="foiAtendido" id="foiAtendidoNao" value="Não" required>
-          <label class="form-check-label" for="foiAtendidoNao">Não</label>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Quer Saber de Política:</label><br>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="querSaberPolitica" id="querSaberPoliticaSim" value="Sim" required>
-          <label class="form-check-label" for="querSaberPoliticaSim">Sim</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="querSaberPolitica" id="querSaberPoliticaNao" value="Não" required>
-          <label class="form-check-label" for="querSaberPoliticaNao">Não</label>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Líder Comunitário:</label><br>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="liderComunitario" id="liderComunitarioSim" value="Sim" required>
-          <label class="form-check-label" for="liderComunitarioSim">Sim</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="liderComunitario" id="liderComunitarioNao" value="Não" required>
-          <label class="form-check-label" for="liderComunitarioNao">Não</label>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="voto">Você votou em quem:</label>
-        <input type="text" class="form-control" id="voto" required>
-      </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
-      <button type="button" class="btn btn-secondary" id="printButton">Imprimir</button>
-    </form>
-  </div>
+    </header>  
+    <div class="yellow-line"></div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="cadastro.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const checkboxes = document.querySelectorAll('.form-check-input.deficiencia');
-      const selectedField = document.getElementById('deficienciasSelecionadas');
+    <div class="container mt-4">
+        <form id="cadastroForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" class="form-control" id="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" class="form-control" id="cpf" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telCel">Tel. Cel:</label>
+                        <input type="text" class="form-control" id="telCel" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telRes">Tel. Resd.:</label>
+                        <input type="text" class="form-control" id="telRes" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cep">CEP:</label>
+                        <input type="text" class="form-control" id="cep" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" class="form-control" id="endereco" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="numero">Número:</label>
+                        <input type="text" class="form-control" id="numero" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" class="form-control" id="bairro" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" class="form-control" id="cidade" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">Estado:</label>
+                        <input type="text" class="form-control" id="estado" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="servicoOferecido">Qual serviço foi solicitado à SEPD?</label>
+                        <input type="text" class="form-control" id="servicoOferecido" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Foi atendido?</label><br>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="foiAtendido" id="foiAtendidoSim" value="Sim" required>
+                            <label class="form-check-label" for="foiAtendidoSim">Sim</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="foiAtendido" id="foiAtendidoNao" value="Não" required>
+                            <label class="form-check-label" for="foiAtendidoNao">Não</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Quer saber mais sobre política?</label><br>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="querSaberPolitica" id="querSaberPoliticaSim" value="Sim" required>
+                            <label class="form-check-label" for="querSaberPoliticaSim">Sim</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="querSaberPolitica" id="querSaberPoliticaNao" value="Não" required>
+                            <label class="form-check-label" for="querSaberPoliticaNao">Não</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>É líder comunitário?</label><br>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="liderComunitario" id="liderComunitarioSim" value="Sim" required>
+                            <label class="form-check-label" for="liderComunitarioSim">Sim</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="liderComunitario" id="liderComunitarioNao" value="Não" required>
+                            <label class="form-check-label" for="liderComunitarioNao">Não</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Deficiências:</label><br>
+                        <div class="form-check">
+                            <input class="form-check-input deficiencia" type="checkbox" value="Deficiência física" id="deficienciaFisica">
+                            <label class="form-check-label" for="deficienciaFisica">Deficiência física</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input deficiencia" type="checkbox" value="Deficiência visual" id="deficienciaVisual">
+                            <label class="form-check-label" for="deficienciaVisual">Deficiência visual</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input deficiencia" type="checkbox" value="Deficiência auditiva" id="deficienciaAuditiva">
+                            <label class="form-check-label" for="deficienciaAuditiva">Deficiência auditiva</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input deficiencia" type="checkbox" value="Deficiência intelectual" id="deficienciaIntelectual">
+                            <label class="form-check-label" for="deficienciaIntelectual">Deficiência intelectual</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input deficiencia" type="checkbox" value="Autismo" id="autismo">
+                            <label class="form-check-label" for="autismo">Autismo</label>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="deficienciasSelecionadas">Deficiências Selecionadas:</label>
+                            <input type="text" class="form-control" id="deficienciasSelecionadas" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="voto">Qual foi seu último voto?</label>
+                        <input type="text" class="form-control" id="voto" required>
+                    </div>
+                </div>
+            </div>
+            <div class="text-right">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </div>
 
-      checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-          const selected = Array.from(checkboxes)
-            .filter(i => i.checked)
-            .map(i => i.value)
-            .join(', ');
-          selectedField.value = selected;
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const checkboxes = document.querySelectorAll('.form-check-input.deficiencia');
+          const selectedField = document.getElementById('deficienciasSelecionadas');
+    
+          checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+              const selected = Array.from(checkboxes)
+                .filter(i => i.checked)
+                .map(i => i.value)
+                .join(', ');
+              selectedField.value = selected;
+            });
+          });
+    
+          const cepInput = document.getElementById('cep');
+          cepInput.addEventListener('blur', function() {
+            const cep = cepInput.value.replace(/\D/g, '');
+            if (cep) {
+              const validacep = /^[0-9]{8}$/;
+              if (validacep.test(cep)) {
+                fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                  .then(response => response.json())
+                  .then(data => {
+                    if (!('erro' in data)) {
+                      document.getElementById('endereco').value = data.logradouro;
+                      document.getElementById('bairro').value = data.bairro;
+                      document.getElementById('cidade').value = data.localidade;
+                      document.getElementById('estado').value = data.uf;
+                    } else {
+                      alert('CEP não encontrado.');
+                    }
+                  })
+                  .catch(error => console.error('Erro ao buscar o CEP:', error));
+              } else {
+                alert('Formato de CEP inválido.');
+              }
+            }
+          });
+    
+          document.getElementById('printButton').addEventListener('click', function() {
+            window.print();
+          });
         });
-      });
-
-      const cepInput = document.getElementById('cep');
-      cepInput.addEventListener('blur', function() {
-        const cep = cepInput.value.replace(/\D/g, '');
-        if (cep) {
-          const validacep = /^[0-9]{8}$/;
-          if (validacep.test(cep)) {
-            fetch(`https://viacep.com.br/ws/${cep}/json/`)
-              .then(response => response.json())
-              .then(data => {
-                if (!('erro' in data)) {
-                  document.getElementById('endereco').value = data.logradouro;
-                  document.getElementById('bairro').value = data.bairro;
-                  document.getElementById('cidade').value = data.localidade;
-                  document.getElementById('estado').value = data.uf;
-                } else {
-                  alert('CEP não encontrado.');
-                }
-              })
-              .catch(error => console.error('Erro ao buscar o CEP:', error));
-          } else {
-            alert('Formato de CEP inválido.');
-          }
-        }
-      });
-
-      document.getElementById('printButton').addEventListener('click', function() {
-        window.print();
-      });
-    });
-  </script>
+      </script>
 </body>
 </html>
