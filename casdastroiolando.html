@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="cadastroiolando.css">
-    <link rel="icon" href="/Login/assents/Iolandofavicon.png" type="imagemfavicon">
+    <link rel="icon" href="/Login/assents/Iolandofavicon.png" type="imagem/favicon">
     <title>Gabinete do Iolando</title>
 </head>
 <style>
@@ -25,7 +25,7 @@
         display: none;
       }
     }
-  </style>
+</style>
 <body>
     <div class="background-header"></div>
     <header class="bg-white text-white py-3">
@@ -62,7 +62,7 @@
                         <input type="text" class="form-control" id="telCel" required>
                     </div>
                     <div class="form-group">
-                        <label for="telRes">Tel. Resd.</label>
+                        <label for="telRes">Tel. Resd.:</label>
                         <input type="text" class="form-control" id="telRes" required>
                     </div>
                     <div class="form-group">
@@ -145,48 +145,56 @@
     <script src="scripts.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-          const checkboxes = document.querySelectorAll('.form-check-input.deficiencia');
-          const selectedField = document.getElementById('deficienciasSelecionadas');
-    
-          checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-              const selected = Array.from(checkboxes)
-                .filter(i => i.checked)
-                .map(i => i.value)
-                .join(', ');
-              selectedField.value = selected;
+            const cpfInput = document.getElementById('cpf');
+            const nomeInput = document.getElementById('nome');
+
+            cpfInput.addEventListener('blur', function() {
+                const cpf = cpfInput.value.replace(/\D/g, '');
+                if (cpf) {
+                    // Simulação de uma chamada à API para buscar nome com base no CPF
+                    // Substitua esta parte com a chamada à sua API real
+                    fetch(`https://api.exemplo.com/consulta-cpf/${cpf}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.nome) {
+                                nomeInput.value = data.nome;
+                            } else {
+                                alert('CPF não encontrado.');
+                            }
+                        })
+                        .catch(error => console.error('Erro ao buscar o CPF:', error));
+                }
             });
-          });
-    
-          const cepInput = document.getElementById('cep');
-          cepInput.addEventListener('blur', function() {
-            const cep = cepInput.value.replace(/\D/g, '');
-            if (cep) {
-              const validacep = /^[0-9]{8}$/;
-              if (validacep.test(cep)) {
-                fetch(`https://viacep.com.br/ws/${cep}/json/`)
-                  .then(response => response.json())
-                  .then(data => {
-                    if (!('erro' in data)) {
-                      document.getElementById('endereco').value = data.logradouro;
-                      document.getElementById('bairro').value = data.bairro;
-                      document.getElementById('cidade').value = data.localidade;
-                      document.getElementById('estado').value = data.uf;
+
+            const cepInput = document.getElementById('cep');
+            cepInput.addEventListener('blur', function() {
+                const cep = cepInput.value.replace(/\D/g, '');
+                if (cep) {
+                    const validacep = /^[0-9]{8}$/;
+                    if (validacep.test(cep)) {
+                        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                            .then(response => response.json())
+                            .then(data => {
+                                if (!('erro' in data)) {
+                                    document.getElementById('endereco').value = data.logradouro;
+                                    document.getElementById('bairro').value = data.bairro;
+                                    document.getElementById('cidade').value = data.localidade;
+                                    document.getElementById('estado').value = data.uf;
+                                } else {
+                                    alert('CEP não encontrado.');
+                                }
+                            })
+                            .catch(error => console.error('Erro ao buscar o CEP:', error));
                     } else {
-                      alert('CEP não encontrado.');
+                        alert('Formato de CEP inválido.');
                     }
-                  })
-                  .catch(error => console.error('Erro ao buscar o CEP:', error));
-              } else {
-                alert('Formato de CEP inválido.');
-              }
-            }
-          });
-    
-          document.getElementById('printButton').addEventListener('click', function() {
-            window.print();
-          });
+                }
+            });
+
+            document.getElementById('printButton').addEventListener('click', function() {
+                window.print();
+            });
         });
-      </script>
+    </script>
 </body>
 </html>

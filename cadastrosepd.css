@@ -76,13 +76,10 @@ input::placeholder {
   color: #f8f9fab6;
 }
 
-.deficiencia {
-  margin-bottom: 10px;
+.deficiencias {
+  height: auto;
 }
 
-.form-check {
-  display: block;
-}
 
 @media (min-width: 768px) {
   .form-group {
