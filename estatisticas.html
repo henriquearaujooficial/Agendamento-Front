@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="icon" href="/Login/assents/Iolandofavicon.png" type="imagemfavicon">
+  <link rel="icon" href="/Login/assents/Iolandofavicon.png" type="imagem/favicon">
   <title>Estatísticas</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <style>
     header {
         background-color: #0362AE;
@@ -52,6 +55,15 @@
       text-align: center;
       flex: 1;
     }
+
+    .chart-container {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .report-button {
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -67,7 +79,7 @@
                 <a class="nav-link" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="estatisticas.html">Estatísticas</a>
+                <a class="nav-link" href="relatorios.html">Relatórios</a>
               </li>
             </ul>
           </div>
@@ -80,15 +92,35 @@
                 <div class="row">
                     <div class="col-md-6 chart-container">
                         <canvas id="chartBar"></canvas>
+                        <button type="button" class="btn btn-primary report-button" data-toggle="modal" data-target="#reportBarModal">Ver Relatório</button>
                     </div>
                     <div class="col-md-6 chart-container">
                         <canvas id="chartLine"></canvas>
+                        <button type="button" class="btn btn-primary report-button" data-toggle="modal" data-target="#reportLineModal">Ver Relatório</button>
                     </div>
                     <div class="col-md-6 chart-container">
                         <canvas id="chartPie"></canvas>
+                        <button type="button" class="btn btn-primary report-button" data-toggle="modal" data-target="#reportPieModal">Ver Relatório</button>
                     </div>
                     <div class="col-md-6 chart-container">
                         <canvas id="chartDoughnut"></canvas>
+                        <button type="button" class="btn btn-primary report-button" data-toggle="modal" data-target="#reportDoughnutModal">Ver Relatório</button>
+                    </div>
+                    <div class="col-md-6 chart-container">
+                        <canvas id="chartEmployees"></canvas>
+                        <button type="button" class="btn btn-primary report-button" data-toggle="modal" data-target="#reportEmployeesModal">Ver Relatório</button>
+                    </div>
+                    <div class="col-md-6 chart-container">
+                        <canvas id="chartDailyServices"></canvas>
+                        <button type="button" class="btn btn-primary report-button" data-toggle="modal" data-target="#reportDailyServicesModal">Ver Relatório</button>
+                    </div>
+                    <div class="col-md-6 chart-container">
+                        <canvas id="chartRegionServices"></canvas>
+                        <button type="button" class="btn btn-primary report-button" data-toggle="modal" data-target="#reportRegionServicesModal">Ver Relatório</button>
+                    </div>
+                    <div class="col-md-6 chart-container">
+                        <canvas id="chartTotalPeople"></canvas>
+                        <button type="button" class="btn btn-primary report-button" data-toggle="modal" data-target="#reportTotalPeopleModal">Ver Relatório</button>
                     </div>
                 </div>
             </div>
@@ -114,12 +146,247 @@
         </div>
     </footer>
 
+    <!-- Modal templates -->
+    <div class="modal fade" id="reportBarModal" tabindex="-1" aria-labelledby="reportBarModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportBarModalLabel">Relatório - Serviços Concluídos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Conteúdo do relatório aqui -->
+                    <p>Relatório detalhado dos serviços concluídos por mês.</p>
+                    <ul>
+                        <li>Janeiro: 12 serviços</li>
+                        <li>Fevereiro: 19 serviços</li>
+                        <li>Março: 3 serviços</li>
+                        <li>Abril: 5 serviços</li>
+                        <li>Maio: 2 serviços</li>
+                        <li>Junho: 3 serviços</li>
+                        <li>Julho: 8 serviços</li>
+                        <li>Agosto: 7 serviços</li>
+                        <li>Setembro: 6 serviços</li>
+                        <li>Outubro: 10 serviços</li>
+                        <li>Novembro: 15 serviços</li>
+                        <li>Dezembro: 18 serviços</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="reportLineModal" tabindex="-1" aria-labelledby="reportLineModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportLineModalLabel">Relatório - Atendimentos Mensais</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Conteúdo do relatório aqui -->
+                    <p>Relatório detalhado dos atendimentos mensais.</p>
+                    <ul>
+                        <li>Janeiro: 15 atendimentos</li>
+                        <li>Fevereiro: 29 atendimentos</li>
+                        <li>Março: 5 atendimentos</li>
+                        <li>Abril: 5 atendimentos</li>
+                        <li>Maio: 20 atendimentos</li>
+                        <li>Junho: 3 atendimentos</li>
+                        <li>Julho: 8 atendimentos</li>
+                        <li>Agosto: 10 atendimentos</li>
+                        <li>Setembro: 14 atendimentos</li>
+                        <li>Outubro: 16 atendimentos</li>
+                        <li>Novembro: 20 atendimentos</li>
+                        <li>Dezembro: 25 atendimentos</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="reportPieModal" tabindex="-1" aria-labelledby="reportPieModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportPieModalLabel">Relatório - Tipos de Serviços</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Conteúdo do relatório aqui -->
+                    <p>Relatório detalhado dos tipos de serviços realizados.</p>
+                    <ul>
+                        <li>Serviço de Campo: 10</li>
+                        <li>Quantos serviços: 20</li>
+                        <li>Cidade: 30</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="reportDoughnutModal" tabindex="-1" aria-labelledby="reportDoughnutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportDoughnutModalLabel">Relatório - Distribuição de Serviços</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Conteúdo do relatório aqui -->
+                    <p>Relatório detalhado da distribuição de serviços.</p>
+                    <ul>
+                        <li>Serviço de Campo: 12</li>
+                        <li>Quantos serviços: 15</li>
+                        <li>Cidade: 8</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="reportEmployeesModal" tabindex="-1" aria-labelledby="reportEmployeesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportEmployeesModalLabel">Relatório - Funcionários Cadastrados</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Conteúdo do relatório aqui -->
+                    <p>Relatório detalhado dos funcionários cadastrados no sistema.</p>
+                    <ul>
+                        <li>Janeiro: 5 funcionários</li>
+                        <li>Fevereiro: 10 funcionários</li>
+                        <li>Março: 15 funcionários</li>
+                        <li>Abril: 20 funcionários</li>
+                        <li>Maio: 25 funcionários</li>
+                        <li>Junho: 30 funcionários</li>
+                        <li>Julho: 35 funcionários</li>
+                        <li>Agosto: 40 funcionários</li>
+                        <li>Setembro: 45 funcionários</li>
+                        <li>Outubro: 50 funcionários</li>
+                        <li>Novembro: 55 funcionários</li>
+                        <li>Dezembro: 60 funcionários</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="reportDailyServicesModal" tabindex="-1" aria-labelledby="reportDailyServicesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportDailyServicesModalLabel">Relatório - Pessoas Atendidas no Dia</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Conteúdo do relatório aqui -->
+                    <p>Relatório detalhado das pessoas atendidas por dia.</p>
+                    <ul>
+                        <li>Segunda: 50 pessoas</li>
+                        <li>Terça: 60 pessoas</li>
+                        <li>Quarta: 70 pessoas</li>
+                        <li>Quinta: 80 pessoas</li>
+                        <li>Sexta: 90 pessoas</li>
+                        <li>Sábado: 100 pessoas</li>
+                        <li>Domingo: 110 pessoas</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="reportRegionServicesModal" tabindex="-1" aria-labelledby="reportRegionServicesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportRegionServicesModalLabel">Relatório - Serviços por Região</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Conteúdo do relatório aqui -->
+                    <p>Relatório detalhado dos serviços por região.</p>
+                    <ul>
+                        <li>Norte: 30 serviços</li>
+                        <li>Sul: 40 serviços</li>
+                        <li>Leste: 20 serviços</li>
+                        <li>Oeste: 10 serviços</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="reportTotalPeopleModal" tabindex="-1" aria-labelledby="reportTotalPeopleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportTotalPeopleModalLabel">Relatório - Total de Pessoas no Banco de Dados</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Conteúdo do relatório aqui -->
+                    <p>Relatório detalhado do total de pessoas no banco de dados.</p>
+                    <ul>
+                        <li>Total de Pessoas: 200</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const ctxBar = document.getElementById('chartBar').getContext('2d');
             const ctxLine = document.getElementById('chartLine').getContext('2d');
             const ctxPie = document.getElementById('chartPie').getContext('2d');
             const ctxDoughnut = document.getElementById('chartDoughnut').getContext('2d');
+            const ctxEmployees = document.getElementById('chartEmployees').getContext('2d');
+            const ctxDailyServices = document.getElementById('chartDailyServices').getContext('2d');
+            const ctxRegionServices = document.getElementById('chartRegionServices').getContext('2d');
+            const ctxTotalPeople = document.getElementById('chartTotalPeople').getContext('2d');
 
             new Chart(ctxBar, {
                 type: 'bar',
@@ -201,6 +468,87 @@
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)',
                             'rgba(75, 192, 192, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                }
+            });
+
+            new Chart(ctxEmployees, {
+                type: 'bar',
+                data: {
+                    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                    datasets: [{
+                        label: 'Funcionários Cadastrados',
+                        data: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60],
+                        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                        borderColor: 'rgba(255, 206, 86, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            new Chart(ctxDailyServices, {
+                type: 'line',
+                data: {
+                    labels: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+                    datasets: [{
+                        label: 'Pessoas Atendidas no Dia',
+                        data: [50, 60, 70, 80, 90, 100, 110],
+                        fill: false,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            new Chart(ctxRegionServices, {
+                type: 'bar',
+                data: {
+                    labels: ['Norte', 'Sul', 'Leste', 'Oeste'],
+                    datasets: [{
+                        label: 'Serviços por Região',
+                        data: [30, 40, 20, 10],
+                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            new Chart(ctxTotalPeople, {
+                type: 'pie',
+                data: {
+                    labels: ['Banco de Dados'],
+                    datasets: [{
+                        label: 'Total de Pessoas no Banco de Dados',
+                        data: [200],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)'
                         ],
                         borderWidth: 1
                     }]

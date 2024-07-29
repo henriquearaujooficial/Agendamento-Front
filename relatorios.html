@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="icon" href="/Login/assents/Iolandofavicon.png" type="imagem/favicon">
+  <title>Relatórios</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+    .header, .footer {
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        left: 0;
+    }
+    .header {
+        top: 0;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+    }
+    .footer {
+        bottom: 0;
+        border-top: 1px solid #ccc;
+        padding: 10px 0;
+    }
+    .report-container {
+        margin-top: 100px; /* Espaço para o cabeçalho */
+        margin-bottom: 80px; /* Espaço para o rodapé */
+    }
+    .report-title {
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .report-content ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    .report-content ul li {
+        margin-bottom: 5px;
+    }
+    .button-container {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+    }
+    .button-container button {
+        margin-bottom: 10px;
+    }
+    @media print {
+        .no-print {
+            display: none;
+        }
+        .header, .footer {
+            position: fixed;
+            width: 100%;
+            left: 0;
+        }
+        .header {
+            top: 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .footer {
+            bottom: 0;
+            border-top: 1px solid #ccc;
+        }
+        .report-container {
+            margin-top: 60px; /* Espaço para o cabeçalho */
+            margin-bottom: 60px; /* Espaço para o rodapé */
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Relatórios Completos</h1>
+  </div>
+  <div class="button-container no-print">
+    <button class="btn btn-primary" onclick="window.print()">Imprimir Relatórios</button>
+    <button class="btn btn-secondary" onclick="window.location.href='estatisticas.html'">Voltar para Estatísticas</button>
+  </div>
+  <div class="container report-container">
+    <div class="report-section">
+      <div class="report-title">Serviços Concluídos</div>
+      <div class="report-content">
+        <ul>
+          <li>Janeiro: 12 serviços</li>
+          <li>Fevereiro: 19 serviços</li>
+          <li>Março: 3 serviços</li>
+          <li>Abril: 5 serviços</li>
+          <li>Maio: 2 serviços</li>
+          <li>Junho: 3 serviços</li>
+          <li>Julho: 8 serviços</li>
+          <li>Agosto: 7 serviços</li>
+          <li>Setembro: 6 serviços</li>
+          <li>Outubro: 10 serviços</li>
+          <li>Novembro: 15 serviços</li>
+          <li>Dezembro: 18 serviços</li>
+        </ul>
+      </div>
+    </div>
+    <div class="report-section">
+      <div class="report-title">Atendimentos Mensais</div>
+      <div class="report-content">
+        <ul>
+          <li>Janeiro: 15 atendimentos</li>
+          <li>Fevereiro: 29 atendimentos</li>
+          <li>Março: 5 atendimentos</li>
+          <li>Abril: 5 atendimentos</li>
+          <li>Maio: 20 atendimentos</li>
+          <li>Junho: 3 atendimentos</li>
+          <li>Julho: 8 atendimentos</li>
+          <li>Agosto: 10 atendimentos</li>
+          <li>Setembro: 14 atendimentos</li>
+          <li>Outubro: 16 atendimentos</li>
+          <li>Novembro: 20 atendimentos</li>
+          <li>Dezembro: 25 atendimentos</li>
+        </ul>
+      </div>
+    </div>
+    <div class="report-section">
+      <div class="report-title">Tipos de Serviços</div>
+      <div class="report-content">
+        <ul>
+          <li>Serviço de Campo: 10</li>
+          <li>Quantos serviços: 20</li>
+          <li>Cidade: 30</li>
+        </ul>
+      </div>
+    </div>
+    <div class="report-section">
+      <div class="report-title">Distribuição de Serviços</div>
+      <div class="report-content">
+        <ul>
+          <li>Serviço de Campo: 12</li>
+          <li>Quantos serviços: 15</li>
+          <li>Cidade: 8</li>
+        </ul>
+      </div>
+    </div>
+    <div class="report-section">
+      <div class="report-title">Funcionários Cadastrados</div>
+      <div class="report-content">
+        <ul>
+          <li>Janeiro: 5 funcionários</li>
+          <li>Fevereiro: 10 funcionários</li>
+          <li>Março: 15 funcionários</li>
+          <li>Abril: 20 funcionários</li>
+          <li>Maio: 25 funcionários</li>
+          <li>Junho: 30 funcionários</li>
+          <li>Julho: 35 funcionários</li>
+          <li>Agosto: 40 funcionários</li>
+          <li>Setembro: 45 funcionários</li>
+          <li>Outubro: 50 funcionários</li>
+          <li>Novembro: 55 funcionários</li>
+          <li>Dezembro: 60 funcionários</li>
+        </ul>
+      </div>
+    </div>
+    <div class="report-section">
+      <div class="report-title">Pessoas Atendidas no Dia</div>
+      <div class="report-content">
+        <ul>
+          <li>Segunda: 50 pessoas</li>
+          <li>Terça: 60 pessoas</li>
+          <li>Quarta: 70 pessoas</li>
+          <li>Quinta: 80 pessoas</li>
+          <li>Sexta: 90 pessoas</li>
+          <li>Sábado: 100 pessoas</li>
+          <li>Domingo: 110 pessoas</li>
+        </ul>
+      </div>
+    </div>
+    <div class="report-section">
+      <div class="report-title">Serviços por Região</div>
+      <div class="report-content">
+        <ul>
+          <li>Norte: 30 serviços</li>
+          <li>Sul: 40 serviços</li>
+          <li>Leste: 20 serviços</li>
+          <li>Oeste: 10 serviços</li>
+        </ul>
+      </div>
+    </div>
+    <div class="report-section">
+      <div class="report-title">Total de Pessoas no Banco de Dados</div>
+      <div class="report-content">
+        <ul>
+          <li>Total de Pessoas: 200</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>© 2024 Serviço de Gestão do Iolando. Todos os direitos reservados.</p>
+  </div>
+</body>
+</html>
