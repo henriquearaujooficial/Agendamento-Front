@@ -17,7 +17,7 @@ header {
 .container {
   max-width: 900px;
   margin: 0 auto;
-  background-color: #0F1E84;
+  background-color: #0362AE;
   padding: 0px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -50,14 +50,14 @@ form {
 }
 
 .btn-primary {
-  background-color: #0F1E84;
-  border-color: #0F1E84;
+  background-color: #0362AE;
+  border-color: #0362AE;
   width: 100px;
 }
 
 .btn-primary:hover {
-  background-color: #0d1a6c;
-  border-color: #0d1a6c;
+  background-color: #0362AE;
+  border-color: #0362AE;
 }
 
 .text-right {
