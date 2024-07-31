@@ -80,6 +80,11 @@ input::placeholder {
   height: auto;
 }
 
+.tipos-deficiencias{
+  display: flex;
+  flex-direction: column;
+}
+
 
 @media (min-width: 768px) {
   .form-group {
