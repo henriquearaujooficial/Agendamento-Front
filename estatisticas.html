@@ -14,6 +14,14 @@
     header {
         background-color: #0362AE;
     }
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #0362AE;
+        z-index: 1000;
+    }
     header a.navbar-brand,
     header .navbar-nav .nav-link {
         color: #fff;
@@ -22,45 +30,46 @@
         background-color: #0362AE;
         color: #fff;
     }
-
     #carouselExample {
       overflow: hidden;
     }
-
     .footer-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 5px;
     }
-
     .social-icons {
       display: flex;
       justify-content: center;
       margin-bottom: 0px;
     }
-
     .social-icons a {
       color: #fff;
       margin: 0 10px;
       font-size: 28px;
       text-decoration: none;
     }
-
     .footer-content img {
       max-height: 40px;
     }
-
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #0362AE;
+        color: #fff;
+        z-index: 1000;
+    }
     .footer-center {
       text-align: center;
       flex: 1;
     }
-
     .chart-container {
       position: relative;
       margin-bottom: 30px;
     }
-
     .report-button {
       margin-top: 10px;
     }
@@ -126,7 +135,6 @@
             </div>
         </section>
     </main>
-
     <footer>
         <div class="footer-content">
             <img src="/Login/assents/iolandoinclusao.png" alt="Left Image">

@@ -1,40 +1,71 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="icon" href="/Login/assents/Iolandofavicon.png" type="imagem/favicon">
   <title>Relatórios</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <style>
     body {
         font-family: Arial, sans-serif;
+        padding-top: 60px; /* Espaço para o cabeçalho fixo */
+        padding-bottom: 60px; /* Espaço para o rodapé fixo */
     }
-    .container {
-        width: 100%;
-        max-width: 800px;
-        margin: auto;
-        padding: 20px;
-    }
-    .header, .footer {
-        text-align: center;
+    header {
         position: fixed;
-        width: 100%;
-        left: 0;
-    }
-    .header {
         top: 0;
-        border-bottom: 1px solid #ccc;
-        padding: 10px 0;
+        left: 0;
+        width: 100%;
+        background-color: #0362AE;
+        z-index: 1000;
     }
-    .footer {
+    header a.navbar-brand,
+    header .navbar-nav .nav-link {
+        color: #fff;
+    }
+
+    /* Centralizar "Relatório Geral" */
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer {
+        position: fixed;
         bottom: 0;
-        border-top: 1px solid #ccc;
-        padding: 10px 0;
+        left: 0;
+        width: 100%;
+        background-color: #0362AE;
+        color: #fff;
+        z-index: 1000;
     }
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+    }
+    .footer-content img {
+        max-height: 40px;
+    }
+    .footer-center {
+        text-align: center;
+        flex: 1;
+    }
+    .report-header {
+      font-size: 36px;
+      color: #fff;
+      font-weight: bold;
+  }  
     .report-container {
-        margin-top: 100px; /* Espaço para o cabeçalho */
-        margin-bottom: 80px; /* Espaço para o rodapé */
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
     .report-title {
         font-weight: bold;
@@ -52,6 +83,7 @@
         position: fixed;
         top: 10px;
         right: 10px;
+        z-index: 1100;
     }
     .button-container button {
         margin-bottom: 10px;
@@ -60,30 +92,67 @@
         .no-print {
             display: none;
         }
-        .header, .footer {
-            position: fixed;
-            width: 100%;
-            left: 0;
-        }
-        .header {
-            top: 0;
-            border-bottom: 1px solid #ccc;
-        }
-        .footer {
-            bottom: 0;
-            border-top: 1px solid #ccc;
+        body {
+            padding-top: 0;
+            padding-bottom: 0;
         }
         .report-container {
-            margin-top: 60px; /* Espaço para o cabeçalho */
-            margin-bottom: 60px; /* Espaço para o rodapé */
+            margin-top: 60px; /* Espaço para o cabeçalho fixo */
+            margin-bottom: 60px; /* Espaço para o rodapé fixo */
+        }
+        header,
+        footer {
+            position: absolute;
         }
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Relatórios Completos</h1>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-transparent">
+      <a class="navbar-brand" href="#">Serviço de Gestão do Iolando</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="relatorios.html">Relatórios</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="button-container no-print">
+    <button class="btn btn-primary" onclick="window.print()">Imprimir Relatórios</button>
+    <button class="btn btn-primary" onclick="window.location.href='estatisticas.html'">Voltar para Estatísticas</button>
   </div>
+  <div class="container report-container">
+    <h2 class="text-center mb-4">Relatório Geral</h2>
+  </div>
+  <footer>
+    <div class="footer-content">
+        <img src="/Login/assents/iolandoinclusao.png" alt="Left Image">
+        <div class="footer-center">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/iolandooficial" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/iolandooficial" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/iolandooficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=556196012101&text=Deputado%20iolando" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.youtube.com/channel/UCcemlg6iZRkm1WkZ_zgguhQ" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="text-center py-3">
+                Todos os direitos reservados &copy; Iolando
+            </div>
+        </div>
+        <img src="/Login/assents/Iolandorodape.png" alt="Right Image">
+    </div>
+  </footer>
+</body>
+</html>
   <div class="button-container no-print">
     <button class="btn btn-primary" onclick="window.print()">Imprimir Relatórios</button>
     <button class="btn btn-primary" onclick="window.location.href='estatisticas.html'">Voltar para Estatísticas</button>
@@ -200,8 +269,23 @@
       </div>
     </div>
   </div>
-  <div class="footer">
-    <p>© 2024 Serviço de Gestão do Iolando. Todos os direitos reservados.</p>
-  </div>
+  <footer>
+    <div class="footer-content">
+        <img src="/Login/assents/iolandoinclusao.png" alt="Left Image">
+        <div class="footer-center">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/iolandooficial" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/iolandooficial" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/iolandooficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=556196012101&text=Deputado%20iolando" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.youtube.com/channel/UCcemlg6iZRkm1WkZ_zgguhQ" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="text-center py-3">
+                Todos os direitos reservados &copy; Iolando
+            </div>
+        </div>
+        <img src="/Login/assents/Iolandorodape.png" alt="Right Image">
+    </div>
+  </footer>
 </body>
 </html>
